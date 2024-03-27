@@ -20,10 +20,10 @@ let p3 = createPromise(true,2300,"Promise 3","rejected");
 
 let comb = Promise.all([p1,p2,p3]);
 comb.then((values)=>{
-	let loading = document.getElementById("load");
+	let loading = document.getElementById("loading");
 	loading.classList.add("hide");
 
-	let tablee = document.getElementsByClassName("operation")[0];
+	let tablee = document.getElementById("output")[0];
 	let totalTime = 0;
 	for(let i=0;i<values.length;i++){
 		let row = tablee.insertRow(i+1);
@@ -33,6 +33,10 @@ comb.then((values)=>{
 		col2.innerHTML = values[i].timeTaken;
 		totalTime+=values[i].timeTaken;
 	}
-	// let row = tablee.insertRow(4);
+	let row = tablee.insertRow(4);
+	let col1 = row.insertCell(0);
+	let col2 = row.insertCell(1);
+	col1.innerHTML = "Total";
+	col2.innerHTML = totalTime;
 	
 })

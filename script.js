@@ -23,7 +23,8 @@ comb.then((values)=>{
 	let loading = document.getElementById("loading");
 	loading.classList.add("hide");
 
-	let tablee = document.getElementById("output")[0];
+	let tablee = document.getElementById("output");
+	
 	let totalTime = 0;
 	for(let i=0;i<values.length;i++){
 		let row = tablee.insertRow(i+1);
@@ -39,4 +40,4 @@ comb.then((values)=>{
 	col1.innerHTML = "Total";
 	col2.innerHTML = totalTime;
 	
-})
+}).catch((err)=>console.log(err));

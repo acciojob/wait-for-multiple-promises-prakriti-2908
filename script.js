@@ -23,11 +23,11 @@ comb.then((values)=>{
 	let loading = document.getElementById("loading");
 	loading.remove();
 
-	let tablee = document.getElementById("output"); 
+	let tablee = document.getElementById("output").parentNode; 
 	let totalTime = 0;
 	let a = 0;
 	for(let i=0;i<values.length;i++){
-		let row = tablee.insertRow(i);
+		let row = tablee.insertRow();
 		let col1 = row.insertCell(0);
 		let col2 = row.insertCell(1);
 		col1.innerHTML = values[i].resState;
@@ -35,7 +35,7 @@ comb.then((values)=>{
 		totalTime+=values[i].timeTaken;
 		a++;
 	} 
-	let row = tablee.insertRow(a);
+	let row = tablee.insertRow(a+1);
 	let col1 = row.insertCell(0);
 	let col2 = row.insertCell(1);
 	col1.innerHTML = "Total";

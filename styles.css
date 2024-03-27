@@ -1,1 +1,7 @@
 /*  your css code here. If applicable */
+.hide{
+	display: none;
+}
+#load{
+	text-align: center;
+}

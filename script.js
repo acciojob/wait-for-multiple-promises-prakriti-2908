@@ -23,12 +23,16 @@ comb.then((values)=>{
 	let loading = document.getElementById("load");
 	loading.classList.add("hide");
 
-	let tablee = document.getElementByClass("operation")[0];
+	let tablee = document.getElementsByClassName("operation")[0];
+	let totalTime = 0;
 	for(let i=0;i<values.length;i++){
 		let row = tablee.insertRow(i+1);
 		let col1 = row.insertCell(0);
 		let col2 = row.insertCell(1);
 		col1.innerHTML = values[i].resState;
 		col2.innerHTML = values[i].timeTaken;
+		totalTime+=values[i].timeTaken;
 	}
+	// let row = tablee.insertRow(4);
+	
 })

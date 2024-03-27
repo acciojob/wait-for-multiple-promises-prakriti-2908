@@ -11,7 +11,7 @@ function createPromise(condition,delay,resState,rejectState){
 				reject(rejectState);
 			}
 		},delay);
-	});
+	});     
 }
 
 let p1 = createPromise(true,1000,"Promise 1","rejected");
@@ -23,8 +23,9 @@ comb.then((values)=>{
 	let loading = document.getElementById("loading");
 	loading.remove();
 
-	let tablee = document.getElementById("output");
+	let tablee = document.getElementById("output"); 
 	let totalTime = 0;
+	let a = 0;
 	for(let i=0;i<values.length;i++){
 		let row = tablee.insertRow(i);
 		let col1 = row.insertCell(0);
@@ -32,8 +33,9 @@ comb.then((values)=>{
 		col1.innerHTML = values[i].resState;
 		col2.innerHTML = values[i].timeTaken;
 		totalTime+=values[i].timeTaken;
-	}
-	let row = tablee.insertRow(3);
+		a++;
+	} 
+	let row = tablee.insertRow(a);
 	let col1 = row.insertCell(0);
 	let col2 = row.insertCell(1);
 	col1.innerHTML = "Total";

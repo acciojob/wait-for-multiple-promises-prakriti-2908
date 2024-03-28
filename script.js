@@ -19,7 +19,7 @@ comb.then((values)=>{
 	let loading = document.getElementById("loading");
 	loading.remove();
 
-	let tablee = document.getElementById("output").parentNode; 
+	let tablee = document.getElementById("output"); 
 	let totalTime = 0;
 	for(let i=0;i<values.length;i++){
 		let row = tablee.insertRow();
